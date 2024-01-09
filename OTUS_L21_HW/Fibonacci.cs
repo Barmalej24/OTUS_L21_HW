@@ -11,10 +11,8 @@ namespace OTUS_L21_HW
 
         public static int Iteration(int n)
         {
-            if (n == 0) 
-                return 0;
-            if (n == 1) 
-                return 1;
+            if (n <= 1 )
+                return n;
 
             int _num0 = 0;
             int _num1 = 1;
