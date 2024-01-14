@@ -16,18 +16,15 @@ namespace OTUS_L21_HW
             //Console.WriteLine(Fibonacci.Iteration(10));
             //Console.WriteLine(Fibonacci.Iteration(20));
 
-
             Console.WriteLine("Рекурсия");
-            PrintResult(Fibonacci.RecursionGetTime(5));
-            PrintResult(Fibonacci.RecursionGetTime(10));
-            PrintResult(Fibonacci.RecursionGetTime(20));
+            PrintResult(Fibonacci.GetRecursionTime(5));
+            PrintResult(Fibonacci.GetRecursionTime(10));
+            PrintResult(Fibonacci.GetRecursionTime(20));
 
             Console.WriteLine("Цикл");
-            PrintResult(Fibonacci.IterationGetTime(5));
-            PrintResult(Fibonacci.IterationGetTime(10));
-            PrintResult(Fibonacci.IterationGetTime(20));
-
-
+            PrintResult(Fibonacci.GetIterationTime(5));
+            PrintResult(Fibonacci.GetIterationTime(10));
+            PrintResult(Fibonacci.GetIterationTime(20));
         }
 
         static void PrintResult((int, TimeSpan) result)
@@ -37,8 +34,6 @@ namespace OTUS_L21_HW
             st.AppendLine($"Член последовательности равный {result.Item1} найден за {result.Item2.TotalMicroseconds} микросекунд");
 
             Console.WriteLine(st);
-        }
-
-        
+        }        
     }
 }

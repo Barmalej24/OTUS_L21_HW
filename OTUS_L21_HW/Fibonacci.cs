@@ -4,19 +4,19 @@ namespace OTUS_L21_HW
 {
     internal class Fibonacci
     {
-        public static int Recursion(int n)
+        public static int GetFibonaciNumberRecursive(int n)
         {
-            return n > 1 ? Recursion(n - 1) + Recursion(n - 2) : n;
+            return n > 1 ? GetFibonaciNumberRecursive(n - 1) + GetFibonaciNumberRecursive(n - 2) : n;
         }
 
-        public static int Iteration(int n)
+        public static int GetFibonaciNumber(int n)
         {
             if (n <= 1 )
                 return n;
 
-            int _num0 = 0;
-            int _num1 = 1;
-            int _result = 0;
+            var _num0 = 0;
+            var _num1 = 1;
+            var _result = 0;
             
             for (int i = 2; i <= n; i++)
             {
@@ -27,23 +27,23 @@ namespace OTUS_L21_HW
             
             return _result;
         }
-        public static (int, TimeSpan) RecursionGetTime(int number)
+        public static (int, TimeSpan) GetRecursionTime(int number)
         {
-            Stopwatch stopWatch = new Stopwatch();
+            var stopWatch = new Stopwatch();
 
             stopWatch.Start();
-            var result = Recursion(number);
+            var result = GetFibonaciNumberRecursive(number);
             stopWatch.Stop();
 
             return (result, stopWatch.Elapsed);
         }
 
-        public static (int, TimeSpan) IterationGetTime(int number)
+        public static (int, TimeSpan) GetIterationTime(int number)
         {
-            Stopwatch stopWatch = new Stopwatch();
+            var stopWatch = new Stopwatch();
 
             stopWatch.Start();
-            var result = Iteration(number);
+            var result = GetFibonaciNumber(number);
             stopWatch.Stop();
 
             return (result, stopWatch.Elapsed);
